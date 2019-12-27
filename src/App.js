@@ -35,7 +35,7 @@ function App() {
     let genRandom = Math.floor(Math.random() * 10)
     console.log('random generator', genRandom)
     setLoading(false)
-    setArticle(articles[genRandom].abstract)
+    setArticle(articles[genRandom])
     console.log(article)
   }
 
