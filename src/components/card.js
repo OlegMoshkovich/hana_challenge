@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import PulseLoader from 'react-spinners/PulseLoader'
+
 
 const CardContainer = styled.a`
 display:flex;
@@ -22,7 +24,11 @@ cursor:pointer;
 export const Card = (props) => {
 
     return (
-        <CardContainer target="_blank" href={props.article.web_url}>{props.article.abstract}</CardContainer>
+        <CardContainer target="_blank" href={props.article.web_url}>
+            {
+                props.loading ? <PulseLoader sizeUnit={"px"} size={10} color={'#977123'} loading={props.loading} /> : props.article.abstract
+            }
+        </CardContainer>
 
     )
 }

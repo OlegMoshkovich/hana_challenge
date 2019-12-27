@@ -30,6 +30,7 @@ function App() {
   const [article, setArticle] = useState('')
   const [loading, setLoading] = useState(true)
   const [title, setTitle] = useState('display article')
+  const [cardLoading, setCardLoading] = useState(false)
 
   if (loading && articles.length > 0) {
     let genRandom = Math.floor(Math.random() * 10)
@@ -45,6 +46,7 @@ function App() {
 
     //only fetch articles if the array of articles is empty
     if (articles.length === 0) {
+      setCardLoading(true)
       fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=LhjEBx8TxE98grgsu312D8vRwatwxrWo`)
         .then(resp => resp.json())
         .then(data => data.response)
@@ -53,6 +55,7 @@ function App() {
           console.log(data)
           setArticles(data)
           setTitle('next article')
+          setCardLoading(false)
         })
         .catch((function (error) {
           setArticles([])
@@ -72,7 +75,7 @@ function App() {
   return (
     <PageContainer>
       <Title>hana interview challenge</Title>
-      <Card article={article} />
+      <Card loading={cardLoading} article={article} />
       <Button fetchArticles={fetchArticles} title={title} />
 
     </PageContainer>
