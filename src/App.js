@@ -20,6 +20,7 @@ top:30px;
 left:40px
 font-family: 'Amatic SC', cursive;
 font-size:24px;
+color:#4B595D;
 `
 
 

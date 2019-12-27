@@ -16,7 +16,7 @@ width:250px;
 height:300px;
 border:1px solid #977123;
 margin-top:100px;
-color:black;
+color:#4B595D;
 text-decoration:none;
 cursor:pointer;
 &:hover{
