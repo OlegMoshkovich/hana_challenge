@@ -19,6 +19,10 @@ margin-top:100px;
 color:black;
 text-decoration:none;
 cursor:pointer;
+&:hover{
+    text-decoration:underline;
+}
+
 `
 
 export const Card = (props) => {

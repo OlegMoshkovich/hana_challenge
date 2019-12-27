@@ -30,10 +30,9 @@ letter-spacing: 2px;
 width:200px;
 height:40px;
 box-shadow: 2px 2px 10px 0px #b7af89;
-
-};
 &:active {
     box-shadow: 0 0 0 0 black;
+}
 `
 
 
